@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>ABDI - Dana Perkebunan</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-container":"#1d704f","tertiary":"#6e5d2a","on-error":"#ffffff","on-primary-container":"#add7ff","on-primary":"#ffffff","surface-container-highest":"#cae9e1","secondary-fixed-dim":"#88d6af","inverse-on-surface":"#d8f7ef","on-tertiary-fixed":"#241a00","on-tertiary":"#ffffff","secondary-fixed":"#a4f3ca","on-tertiary-container":"#4c3e0d","outline-variant":"#c1c7d0","on-secondary":"#ffffff","tertiary-container":"#bea96f","error-container":"#ffdad6","error":"#ba1a1a","surface-container":"#d5f4ec","surface-variant":"#cae9e1","on-surface-variant":"#41474e","primary-container":"#1f5f8b","tertiary-fixed-dim":"#dbc588","on-error-container":"#93000a","surface-bright":"#e5fff8","on-tertiary-fixed-variant":"#544515","surface-container-lowest":"#ffffff","surface-container-low":"#dbfaf2","on-surface":"#03201b","on-background":"#03201b","surface-container-high":"#d0efe7","secondary-container":"#a1f0c7","inverse-surface":"#193530","surface-dim":"#c2e1d9","secondary":"#176b4b","on-secondary-fixed":"#002113","outline":"#71787f","surface-tint":"#24638f","on-secondary-fixed-variant":"#005236","primary-fixed":"#cde5ff","background":"#e5fff8","tertiary-fixed":"#f9e1a1","primary":"#00476e","surface":"#e5fff8","on-primary-fixed-variant":"#004b74","on-primary-fixed":"#001d31","primary-fixed-dim":"#94ccfe","inverse-primary":"#94ccfe"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","margin":"2rem","space-lg":"1.5rem","gutter":"1.25rem","space-xs":"0.25rem","space-md":"1rem","space-xl":"2.5rem"},"fontFamily":{"display-hero":["Newsreader"],"body-lg":["Public Sans"],"display-hero-mobile":["Newsreader"],"headline-md":["Newsreader"],"label-md":["Public Sans"],"headline-lg":["Newsreader"],"body-sm":["Public Sans"],"label-sm":["Public Sans"],"headline-lg-mobile":["Newsreader"]},"fontSize":{"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-sm text-body-sm text-on-surface antialiased min-h-screen flex flex-col justify-between"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant"><div class="max-w-[1200px] mx-auto px-margin h-16 flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><img alt="Logo ABDI" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrASIUa7gh8rfd2_T0EnAWS2Mnbk9NPg6r-c0EOhQjI2x4Y9oxFbF3i9Sc9A8giawOzUscj4FH51z6o4R3uJpQrkva4HCaVOl5NlEFu_q4ykrG4lMvvtjXt68dN-kJrTFcaUNMAUMNuehyEXDf2oEXOMIbotrXzRKbGHmguP2up_OxXQNszAAMN_he8MbwkPf1itPskZqH9KuKa9TaiJsFQBxtbEhm3oRA3Q0vVIa3WB"/><div class="flex flex-col border-l border-outline-variant pl-space-md"><span class="font-headline-md text-headline-md text-on-surface leading-none tracking-tight">ABDI</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Prototipe Kebijakan Fiskal</span></div></div><nav class="hidden xl:flex items-center h-full gap-space-md overflow-x-auto" data-active-classes="border-b-2 border-primary-container text-primary-container font-semibold"><a class="h-full flex items-center px-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="beranda" href="#">Beranda</a><a class="h-full flex items-center px-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="ukd-adekuasi" href="#">UKD (A: Adequacy)</a><a class="h-full flex items-center px-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="penyangga-buffer" href="#">Penyangga (B: Buffer)</a><a class="h-full flex items-center px-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="peremajaan-deliver" href="#">Peremajaan (D: Deliver)</a><a class="h-full flex items-center px-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="laporan-impact" href="#">Laporan (I: Impact)</a><a class="h-full flex items-center px-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="siklus" href="#">Siklus</a><a class="h-full flex items-center px-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="sumber" href="#">Sumber</a></nav><div class="flex items-center gap-space-lg shrink-0"><div class="flex items-center gap-space-sm bg-surface-container-low px-space-sm py-1.5 rounded border border-outline-variant"><label class="flex items-center gap-1.5 cursor-pointer select-none" for="toggle-penjelasan"><span class="font-label-sm text-label-sm text-on-surface-variant">Tampilkan penjelasan</span><span class="material-symbols-outlined text-[16px] text-outline">info</span></label><input class="sr-only peer" id="toggle-penjelasan" type="checkbox"/><div class="w-8 h-4 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:border-outline-variant after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-primary-container relative cursor-pointer"></div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-4rem-49px)]"><div class="flex flex-col w-full">
+<div class="w-full max-w-[1200px] mx-auto px-margin py-space-md flex flex-col gap-space-md">
+<!-- Sub-navigation anchor line indicator for UKD (A: Adequacy) active -->
+<div class="flex items-center justify-between pb-space-xs border-b border-outline-variant">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded bg-surface-container-lowest border border-on-surface flex items-center justify-center font-headline-md text-headline-md leading-none text-on-surface">A</span>
+<h1 class="font-headline-md text-headline-md text-on-surface">Uji Kecukupan Dana (UKD)</h1>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary-fixed text-primary font-medium">Model Fiskal 2026</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Status simulasi:</span>
+<div class="inline-flex rounded p-0.5 bg-surface-container border border-outline-variant text-[11px]" id="status-quick-switch">
+<button class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-lowest text-on-surface font-semibold shadow-sm transition-all" id="btn-tab-k1" onclick="setPreset('K1')" type="button">K1 (Defisit Rendah)</button>
+<button class="px-2 py-0.5 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" id="btn-tab-k3" onclick="setPreset('K3')" type="button">K3 (Surplus)</button>
+<button class="px-2 py-0.5 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" id="btn-tab-k2" onclick="setPreset('K2')" type="button">K2 (Kritis)</button>
+</div>
+</div>
+</div>
+<!-- Main Two-Column Analytical Workspace -->
+<div class="flex flex-col lg:flex-row gap-space-md items-start">
+<!-- LEFT PANEL: Assumptions (exactly 300px fixed width) -->
+<section class="w-full lg:w-[300px] shrink-0 bg-surface-container-lowest border border-outline-variant rounded-[10px] p-space-md flex flex-col gap-space-md">
+<!-- Panel Header & Reset -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">tune</span>
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Asumsi Kebijakan</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-0.5" onclick="resetToBaseline()" type="button">
+<span class="material-symbols-outlined text-[14px]">restart_alt</span>
+            Reset
+          </button>
+</div>
+<!-- Scenario Pills K1–K4 -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Skenario Makro</span>
+<div class="grid grid-cols-4 gap-1 p-1 bg-surface-container-low rounded border border-outline-variant">
+<button class="py-1 text-center font-label-sm text-label-sm rounded font-semibold bg-primary text-on-primary transition-all" id="pill-K1" onclick="setPreset('K1')" type="button">K1</button>
+<button class="py-1 text-center font-label-sm text-label-sm rounded font-medium text-on-surface-variant hover:text-on-surface transition-all" id="pill-K2" onclick="setPreset('K2')" type="button">K2</button>
+<button class="py-1 text-center font-label-sm text-label-sm rounded font-medium text-on-surface-variant hover:text-on-surface transition-all" id="pill-K3" onclick="setPreset('K3')" type="button">K3</button>
+<button class="py-1 text-center font-label-sm text-label-sm rounded font-medium text-on-surface-variant hover:text-on-surface transition-all" id="pill-K4" onclick="setPreset('K4')" type="button">K4</button>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant italic truncate" id="scenario-desc">K1: Baseline resmi RAPBN 2026</div>
+</div>
+<div class="w-full h-px bg-outline-variant/60"></div>
+<!-- Primary Sliders -->
+<div class="flex flex-col gap-space-md">
+<!-- 1. Minyak Brent -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm text-on-surface flex items-center gap-1" for="slider-brent">
+                Minyak Brent
+                <span class="material-symbols-outlined text-[13px] text-outline cursor-help" title="Asumsi harga rata-rata tahunan minyak mentah dunia (Brent)">info</span>
+</label>
+<span class="font-headline-md text-headline-md text-on-surface" id="val-brent">US$85</span>
+</div>
+<input class="w-full h-1.5 bg-outline-variant rounded-lg appearance-none cursor-pointer accent-primary-container" id="slider-brent" max="120" min="70" oninput="handleSliderChange()" step="1" type="range" value="85"/>
+<div class="flex justify-between font-label-sm text-[10px] text-outline">
+<span>US$70</span>
+<span>US$120</span>
+</div>
+</div>
+<!-- 2. Penerimaan Pungutan -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm text-on-surface flex items-center gap-1" for="slider-revenue">
+                Penerimaan
+                <span class="material-symbols-outlined text-[13px] text-outline cursor-help" title="Proyeksi pungutan ekspor kelapa sawit &amp; hasil olahan">info</span>
+</label>
+<span class="font-headline-md text-headline-md text-on-surface" id="val-revenue">Rp41,22 T</span>
+</div>
+<input class="w-full h-1.5 bg-outline-variant rounded-lg appearance-none cursor-pointer accent-primary-container" id="slider-revenue" max="55" min="25" oninput="handleSliderChange()" step="0.1" type="range" value="41.22"/>
+<div class="flex justify-between font-label-sm text-[10px] text-outline">
+<span>Rp25 T</span>
+<span>Rp55 T</span>
+</div>
+</div>
+<!-- 3. Peremajaan Sawit Rakyat (PSR) -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm text-on-surface flex items-center gap-1" for="slider-psr">
+                Peremajaan (PSR)
+                <span class="material-symbols-outlined text-[13px] text-outline cursor-help" title="Alokasi program Peremajaan Sawit Rakyat">info</span>
+</label>
+<span class="font-headline-md text-headline-md text-on-surface" id="val-psr">Rp3,63 T</span>
+</div>
+<input class="w-full h-1.5 bg-outline-variant rounded-lg appearance-none cursor-pointer accent-primary-container" id="slider-psr" max="10" min="0" oninput="handleSliderChange()" step="0.1" type="range" value="3.63"/>
+<div class="flex justify-between font-label-sm text-[10px] text-outline">
+<span>Rp0 T</span>
+<span>Rp10 T</span>
+</div>
+</div>
+<!-- 4. Saldo Penyangga -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm text-on-surface flex items-center gap-1" for="slider-buffer">
+                Saldo penyangga
+                <span class="material-symbols-outlined text-[13px] text-outline cursor-help" title="Cadangan kas fleksibel yang dapat diserap saat defisit operasional">info</span>
+</label>
+<span class="font-headline-md text-headline-md text-on-surface" id="val-buffer">Rp9,20 T</span>
+</div>
+<input class="w-full h-1.5 bg-outline-variant rounded-lg appearance-none cursor-pointer accent-primary-container" id="slider-buffer" max="18.45" min="0" oninput="handleSliderChange()" step="0.05" type="range" value="9.2"/>
+<div class="flex justify-between font-label-sm text-[10px] text-outline">
+<span>Rp0 T</span>
+<span>Rp18,45 T</span>
+</div>
+</div>
+</div>
+<!-- Collapsible Advanced Sliders -->
+<div class="border border-outline-variant rounded bg-surface-container-low overflow-hidden">
+<button class="w-full px-3 py-2 flex items-center justify-between text-left hover:bg-surface-container transition-colors" onclick="toggleAdvancedAccordion()" type="button">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Asumsi lanjutan</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant transition-transform" id="adv-chevron">expand_more</span>
+</button>
+<div class="hidden p-3 pt-1 flex-col gap-space-sm border-t border-outline-variant/60" id="adv-container">
+<!-- 1. Pos Lainnya -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[11px] text-on-surface">Pos lainnya (X)</span>
+<span class="font-label-sm text-[11px] font-semibold text-on-surface" id="val-adv-x">Rp1,20 T</span>
+</div>
+<input class="w-full h-1 bg-outline-variant rounded appearance-none cursor-pointer accent-primary-container" id="slider-adv-x" max="3.0" min="0.5" oninput="handleSliderChange()" step="0.1" type="range" value="1.2"/>
+</div>
+<!-- 2. Porsi disisihkan -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[11px] text-on-surface">Porsi disisihkan (β)</span>
+<span class="font-label-sm text-[11px] font-semibold text-on-surface" id="val-adv-beta">15%</span>
+</div>
+<input class="w-full h-1 bg-outline-variant rounded appearance-none cursor-pointer accent-primary-container" id="slider-adv-beta" max="30" min="5" oninput="handleSliderChange()" step="1" type="range" value="15"/>
+</div>
+<!-- 3. Rata-rata jeda bayar -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[11px] text-on-surface">Rata-rata berjeda</span>
+<span class="font-label-sm text-[11px] font-semibold text-on-surface" id="val-adv-lag">45 hari</span>
+</div>
+<input class="w-full h-1 bg-outline-variant rounded appearance-none cursor-pointer accent-primary-container" id="slider-adv-lag" max="90" min="15" oninput="handleSliderChange()" step="5" type="range" value="45"/>
+</div>
+</div>
+</div>
+</section>
+<!-- RIGHT AREA: Dynamic Analytical Verdict & Projections -->
+<section class="flex-1 w-full flex flex-col gap-space-md">
+<!-- 1. Signature Status Alert Banner -->
+<div class="w-full rounded-[10px] p-space-md border border-[#A8650F]/40 bg-[#F6E8CF] flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm relative overflow-hidden transition-colors" id="status-banner">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-[#A8650F]" id="status-bar-stripe"></div>
+<div class="flex flex-col pl-2">
+<span class="font-label-sm text-label-sm text-[#A8650F] uppercase tracking-wider font-semibold" id="status-subtitle">Status Kecukupan Fiskal</span>
+<div class="font-headline-lg text-headline-lg text-[#A8650F] tracking-tight" id="status-headline">Kesenjangan Rp3,71 T</div>
+</div>
+<div class="flex items-center gap-space-xs self-start sm:self-center pl-2 sm:pl-0">
+<span class="px-3 py-1 rounded-full font-label-md text-label-md font-semibold bg-surface-container-lowest text-[#A8650F] border border-[#A8650F]/30" id="status-chip">
+              Daya tahan 2,5 tahun
+            </span>
+</div>
+</div>
+<!-- 2. Three KPI Metric Tiles -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Tile 1: Kebutuhan B50 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[10px] p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Kebutuhan B50</span>
+<span class="material-symbols-outlined text-[15px] text-outline cursor-help" title="Selisih HIP Biodiesel dan HIP Solar dikalikan kuota serap">info</span>
+</div>
+<div class="mt-2">
+<span class="font-display-hero text-[36px] leading-tight text-on-surface font-semibold tracking-tight" id="kpi-b50">Rp41,30 T</span>
+</div>
+<div class="mt-2 text-[11px] font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              Penyaluran 15,6 juta kL
+            </div>
+</div>
+<!-- Tile 2: Total Belanja -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[10px] p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Total belanja</span>
+<span class="material-symbols-outlined text-[15px] text-outline cursor-help" title="Akumulasi subsidi B50, dana PSR, dan pos operasional pendukung">info</span>
+</div>
+<div class="mt-2">
+<span class="font-display-hero text-[36px] leading-tight text-on-surface font-semibold tracking-tight" id="kpi-spending">Rp44,93 T</span>
+</div>
+<div class="mt-2 text-[11px] font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+              B50 + PSR + Operasional
+            </div>
+</div>
+<!-- Tile 3: Saldo Tahunan -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[10px] p-space-md flex flex-col justify-between" id="tile-balance-box">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Saldo tahunan</span>
+<span class="material-symbols-outlined text-[15px] text-outline cursor-help" title="Penerimaan bruto dikurangi total pengeluaran">info</span>
+</div>
+<div class="mt-2">
+<span class="font-display-hero text-[36px] leading-tight text-[#A8650F] font-semibold tracking-tight" id="kpi-balance">-Rp3,71 T</span>
+</div>
+<div class="mt-2 text-[11px] font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#A8650F]" id="kpi-balance-bullet"></span>
+<span id="kpi-balance-note">Defisit operasional berjalan</span>
+</div>
+</div>
+</div>
+<!-- 3. Comparative Fiscal Balance Chart Section -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[10px] p-space-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">stacked_bar_chart</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Komparasi Neraca Fiskal</h2>
+</div>
+<div class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm border border-outline-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">flag</span>
+<span>Titik impas Brent ≈ US$90</span>
+</div>
+</div>
+<!-- Visual Bar Chart Representation -->
+<div class="relative w-full pt-4 pb-2 px-2 flex flex-col">
+<!-- Graphic Canvas Area (180px height) -->
+<div class="relative w-full h-[180px] flex items-end justify-around border-b border-outline-variant px-4 sm:px-12">
+<!-- Dashed Revenue Reference Line -->
+<div class="absolute left-6 right-6 border-b border-dashed border-primary z-20 pointer-events-none transition-all duration-300" id="chart-ref-line" style="bottom: 74%;">
+<div class="absolute -top-3 right-0 px-1.5 py-0.5 rounded bg-primary text-on-primary font-label-sm text-[10px] font-bold">
+                  Batas Penerimaan
+                </div>
+</div>
+<!-- Bar 1: Penerimaan -->
+<div class="flex flex-col items-center gap-2 w-28 sm:w-36 z-10">
+<span class="font-label-sm text-label-sm font-semibold text-primary" id="chart-rev-label">Rp41,22 T</span>
+<div class="w-full bg-[#1F5F8B] rounded-t transition-all duration-300 relative flex items-center justify-center text-on-primary font-label-sm text-[11px]" id="bar-rev" style="height: 130px;">
+<span class="opacity-90">Penerimaan</span>
+</div>
+</div>
+<!-- Gap indicator bracket / callout -->
+<div class="flex flex-col items-center justify-center z-20 px-2 py-1 bg-[#F6E8CF] border border-[#A8650F]/40 rounded text-center transition-all duration-300" id="chart-gap-indicator">
+<span class="font-label-sm text-[10px] text-on-surface-variant font-medium">Kesenjangan</span>
+<span class="font-headline-md text-[15px] font-bold text-[#A8650F] leading-none" id="chart-gap-label">-Rp3,71 T</span>
+</div>
+<!-- Bar 2: Stacked Belanja (B50 + PSR) -->
+<div class="flex flex-col items-center gap-2 w-28 sm:w-36 z-10">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface" id="chart-spend-label">Rp44,93 T</span>
+<div class="w-full rounded-t overflow-hidden flex flex-col justify-end transition-all duration-300" id="bar-spend-total" style="height: 145px;">
+<!-- Sub-bar: PSR Top -->
+<div class="w-full bg-[#B9A46A] flex items-center justify-center text-on-surface font-label-sm text-[10px] font-medium" id="sub-bar-psr" style="height: 16px;" title="PSR Rp3,63 T">
+<span>PSR</span>
+</div>
+<!-- Sub-bar: B50 Bottom -->
+<div class="w-full bg-[#6D9FC0] flex items-center justify-center text-on-primary font-label-sm text-[11px]" id="sub-bar-b50" style="height: 129px;" title="Biodiesel B50 Rp41,30 T">
+<span>B50</span>
+</div>
+</div>
+</div>
+</div>
+<!-- X-Axis Labels & Legend -->
+<div class="flex items-center justify-between pt-3 px-4 sm:px-12 text-on-surface-variant font-label-sm text-label-sm">
+<div class="w-28 sm:w-36 text-center font-medium">Penerimaan Bruto</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1 text-[11px]"><span class="w-2.5 h-2.5 rounded-sm bg-[#6D9FC0]"></span>B50</span>
+<span class="flex items-center gap-1 text-[11px]"><span class="w-2.5 h-2.5 rounded-sm bg-[#B9A46A]"></span>PSR</span>
+</div>
+<div class="w-28 sm:w-36 text-center font-medium">Alokasi Belanja</div>
+</div>
+</div>
+</div>
+<!-- 4. Closing the Gap Policy Levers ("Pilihan penutup celah") -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[10px] p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Pilihan Penutup Celah Fiskal</span>
+<span class="font-label-sm text-label-sm text-outline">Intervensi kebijakan</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm">
+<!-- Option 1: Tarif Ekspor -->
+<div class="flex items-center justify-between p-2.5 rounded bg-surface-container-low border border-outline-variant hover:border-primary transition-colors cursor-pointer group">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">trending_up</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Tarif +1,1 poin</span>
+<span class="text-[10px] font-label-sm text-on-surface-variant">Penyesuaian pungutan ekspor</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[15px] text-outline cursor-help" title="Kewenangan Komite Pengarah BPDP">info</span>
+</div>
+<!-- Option 2: Dukungan APBN -->
+<div class="flex items-center justify-between p-2.5 rounded bg-surface-container-low border border-outline-variant hover:border-primary transition-colors cursor-pointer group">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">APBN Rp3,71 T</span>
+<span class="text-[10px] font-label-sm text-on-surface-variant">Bantalan fiskal negara</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[15px] text-outline cursor-help" title="Persetujuan Kemenkeu &amp; DPR RI">info</span>
+</div>
+<!-- Option 3: Buffer Kas Penyangga -->
+<div class="flex items-center justify-between p-2.5 rounded bg-surface-container-low border border-outline-variant hover:border-primary transition-colors cursor-pointer group">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">shield</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Penyangga 2,5 thn</span>
+<span class="text-[10px] font-label-sm text-on-surface-variant">Serap cadangan kas operasional</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[15px] text-outline cursor-help" title="Penggunaan cadangan kas internal">info</span>
+</div>
+</div>
+</div>
+<!-- 5. Collapsible Scenario Matrix Comparison Table -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[10px] overflow-hidden">
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors" onclick="toggleScenarioMatrix()" type="button">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">table_chart</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Bandingkan skenario (K1–K4)</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant transition-transform" id="matrix-chevron">expand_more</span>
+</button>
+<div class="hidden border-t border-outline-variant overflow-x-auto" id="matrix-container">
+<table class="w-full text-left font-label-sm text-label-sm">
+<thead class="bg-surface-container font-semibold text-on-surface border-b border-outline-variant">
+<tr>
+<th class="py-2.5 px-4">Skenario</th>
+<th class="py-2.5 px-3">Brent</th>
+<th class="py-2.5 px-3">Penerimaan</th>
+<th class="py-2.5 px-3">Kebutuhan B50</th>
+<th class="py-2.5 px-3">Saldo</th>
+<th class="py-2.5 px-4 text-right">Daya Tahan</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/50">
+<tr class="hover:bg-surface-container-low/70 cursor-pointer" onclick="setPreset('K1')">
+<td class="py-2.5 px-4 font-semibold text-primary">K1 (Baseline)</td>
+<td class="py-2.5 px-3">US$85</td>
+<td class="py-2.5 px-3">Rp41,22 T</td>
+<td class="py-2.5 px-3">Rp41,30 T</td>
+<td class="py-2.5 px-3 text-[#A8650F] font-semibold">-Rp3,71 T</td>
+<td class="py-2.5 px-4 text-right font-medium">2,5 thn</td>
+</tr>
+<tr class="hover:bg-surface-container-low/70 cursor-pointer" onclick="setPreset('K2')">
+<td class="py-2.5 px-4 font-semibold text-on-surface">K2 (Konservatif)</td>
+<td class="py-2.5 px-3">US$75</td>
+<td class="py-2.5 px-3">Rp33,50 T</td>
+<td class="py-2.5 px-3">Rp45,45 T</td>
+<td class="py-2.5 px-3 text-[#A33A2C] font-semibold">-Rp11,95 T</td>
+<td class="py-2.5 px-4 text-right font-medium">0,8 thn</td>
+</tr>
+<tr class="hover:bg-surface-container-low/70 cursor-pointer" onclick="setPreset('K3')">
+<td class="py-2.5 px-4 font-semibold text-on-surface">K3 (Bullish)</td>
+<td class="py-2.5 px-3">US$105</td>
+<td class="py-2.5 px-3">Rp48,90 T</td>
+<td class="py-2.5 px-3">Rp37,68 T</td>
+<td class="py-2.5 px-3 text-[#2E7D5B] font-semibold">+Rp7,59 T</td>
+<td class="py-2.5 px-4 text-right font-medium">&gt;5 thn</td>
+</tr>
+<tr class="hover:bg-surface-container-low/70 cursor-pointer" onclick="setPreset('K4')">
+<td class="py-2.5 px-4 font-semibold text-on-surface">K4 (Ekstrem)</td>
+<td class="py-2.5 px-3">US$65</td>
+<td class="py-2.5 px-3">Rp28,10 T</td>
+<td class="py-2.5 px-3">Rp47,80 T</td>
+<td class="py-2.5 px-3 text-[#A33A2C] font-semibold">-Rp19,70 T</td>
+<td class="py-2.5 px-4 text-right font-medium">0,3 thn</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<script>
+  // Scenario definitions
+  const SCENARIOS = {
+    K1: {
+      name: "K1: Baseline resmi RAPBN 2026",
+      brent: 85,
+      revenue: 41.22,
+      psr: 3.63,
+      buffer: 9.20,
+      b50: 41.30,
+      balance: -3.71,
+      endurance: "2,5 tahun"
+    },
+    K2: {
+      name: "K2: Konservatif (Minyak anjlok & defisit)",
+      brent: 75,
+      revenue: 33.50,
+      psr: 3.63,
+      buffer: 9.20,
+      b50: 45.45,
+      balance: -11.95,
+      endurance: "0,8 tahun"
+    },
+    K3: {
+      name: "K3: Bullish (Minyak menguat & surplus)",
+      brent: 105,
+      revenue: 48.90,
+      psr: 3.63,
+      buffer: 9.20,
+      b50: 37.68,
+      balance: 7.59,
+      endurance: ">5 tahun"
+    },
+    K4: {
+      name: "K4: Ekstrem (Krisis harga CPO & Brent)",
+      brent: 65,
+      revenue: 28.10,
+      psr: 3.63,
+      buffer: 9.20,
+      b50: 47.80,
+      balance: -19.70,
+      endurance: "0,3 tahun"
+    }
+  };
+
+  let activeScenario = 'K1';
+
+  function formatIDR(val) {
+    const isNegative = val < 0;
+    const absVal = Math.abs(val).toFixed(2).replace('.', ',');
+    return (isNegative ? '-Rp' : '+Rp') + absVal + ' T';
+  }
+
+  function toggleAdvancedAccordion() {
+    const container = document.getElementById('adv-container');
+    const chevron = document.getElementById('adv-chevron');
+    if (container.classList.contains('hidden')) {
+      container.classList.remove('hidden');
+      container.classList.add('flex');
+      chevron.style.transform = 'rotate(180deg)';
+    } else {
+      container.classList.add('hidden');
+      container.classList.remove('flex');
+      chevron.style.transform = 'rotate(0deg)';
+    }
+  }
+
+  function toggleScenarioMatrix() {
+    const container = document.getElementById('matrix-container');
+    const chevron = document.getElementById('matrix-chevron');
+    if (container.classList.contains('hidden')) {
+      container.classList.remove('hidden');
+      chevron.style.transform = 'rotate(180deg)';
+    } else {
+      container.classList.add('hidden');
+      chevron.style.transform = 'rotate(0deg)';
+    }
+  }
+
+  function setPreset(code) {
+    activeScenario = code;
+    const s = SCENARIOS[code];
+    if (!s) return;
+
+    // Update Slider inputs
+    document.getElementById('slider-brent').value = s.brent;
+    document.getElementById('slider-revenue').value = s.revenue;
+    document.getElementById('slider-psr').value = s.psr;
+    document.getElementById('slider-buffer').value = s.buffer;
+
+    // Scenario label
+    document.getElementById('scenario-desc').textContent = s.name;
+
+    // Update scenario button pills active state
+    ['K1', 'K2', 'K3', 'K4'].forEach(k => {
+      const pill = document.getElementById('pill-' + k);
+      if (k === code) {
+        pill.className = 'py-1 text-center font-label-sm text-label-sm rounded font-semibold bg-primary text-on-primary transition-all';
+      } else {
+        pill.className = 'py-1 text-center font-label-sm text-label-sm rounded font-medium text-on-surface-variant hover:text-on-surface transition-all';
+      }
+    });
+
+    // Update Quick switch tabs on top right
+    const tabMap = {
+      K1: 'btn-tab-k1',
+      K3: 'btn-tab-k3',
+      K2: 'btn-tab-k2'
+    };
+    Object.keys(tabMap).forEach(k => {
+      const btn = document.getElementById(tabMap[k]);
+      if (btn) {
+        if (k === code) {
+          btn.className = 'px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-lowest text-on-surface font-semibold shadow-sm transition-all';
+        } else {
+          btn.className = 'px-2 py-0.5 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all';
+        }
+      }
+    });
+
+    recalculate();
+  }
+
+  function resetToBaseline() {
+    setPreset('K1');
+  }
+
+  function handleSliderChange() {
+    recalculate();
+  }
+
+  function recalculate() {
+    const brent = parseFloat(document.getElementById('slider-brent').value);
+    const rev = parseFloat(document.getElementById('slider-revenue').value);
+    const psr = parseFloat(document.getElementById('slider-psr').value);
+    const buffer = parseFloat(document.getElementById('slider-buffer').value);
+
+    // Advanced inputs
+    const advX = parseFloat(document.getElementById('slider-adv-x').value);
+    const advBeta = parseFloat(document.getElementById('slider-adv-beta').value);
+    const advLag = parseInt(document.getElementById('slider-adv-lag').value, 10);
+
+    // Dynamic Labels beside sliders
+    document.getElementById('val-brent').textContent = 'US$' + Math.round(brent);
+    document.getElementById('val-revenue').textContent = 'Rp' + rev.toFixed(2).replace('.', ',') + ' T';
+    document.getElementById('val-psr').textContent = 'Rp' + psr.toFixed(2).replace('.', ',') + ' T';
+    document.getElementById('val-buffer').textContent = 'Rp' + buffer.toFixed(2).replace('.', ',') + ' T';
+
+    document.getElementById('val-adv-x').textContent = 'Rp' + advX.toFixed(2).replace('.', ',') + ' T';
+    document.getElementById('val-adv-beta').textContent = advBeta + '%';
+    document.getElementById('val-adv-lag').textContent = advLag + ' hari';
+
+    // Model calculation:
+    // Higher brent decreases B50 subsidy gap: Base B50 is around 41.30 at $85 Brent.
+    // Each $1 increase in Brent reduces subsidy requirement by ~0.18 T
+    const b50Calc = Math.max(10, 41.30 - (brent - 85) * 0.18);
+    const totalSpending = b50Calc + psr;
+    const balance = rev - totalSpending;
+
+    // Endurance calculation: buffer / deficit
+    let enduranceText = ">5 tahun";
+    let enduranceYears = 99;
+    if (balance < 0) {
+      enduranceYears = Math.abs(buffer / balance);
+      enduranceText = enduranceYears.toFixed(1).replace('.', ',') + " tahun";
+    }
+
+    // Update KPI Tiles
+    document.getElementById('kpi-b50').textContent = 'Rp' + b50Calc.toFixed(2).replace('.', ',') + ' T';
+    document.getElementById('kpi-spending').textContent = 'Rp' + totalSpending.toFixed(2).replace('.', ',') + ' T';
+    
+    const balanceElem = document.getElementById('kpi-balance');
+    const balanceBullet = document.getElementById('kpi-balance-bullet');
+    const balanceNote = document.getElementById('kpi-balance-note');
+    balanceElem.textContent = (balance >= 0 ? '+' : '-') + 'Rp' + Math.abs(balance).toFixed(2).replace('.', ',') + ' T';
+
+    // Update Status Banner and KPI colors
+    const banner = document.getElementById('status-banner');
+    const stripe = document.getElementById('status-bar-stripe');
+    const headline = document.getElementById('status-headline');
+    const subtitle = document.getElementById('status-subtitle');
+    const chip = document.getElementById('status-chip');
+
+    if (balance >= 0) {
+      // GREEN (SURPLUS)
+      banner.className = 'w-full rounded-[10px] p-space-md border border-[#2E7D5B]/40 bg-[#DCEFE5] flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm relative overflow-hidden transition-colors';
+      stripe.className = 'absolute left-0 top-0 bottom-0 w-1.5 bg-[#2E7D5B]';
+      headline.className = 'font-headline-lg text-headline-lg text-[#2E7D5B] tracking-tight';
+      headline.textContent = 'Dana Cukup ' + formatIDR(balance);
+      subtitle.className = 'font-label-sm text-label-sm text-[#2E7D5B] uppercase tracking-wider font-semibold';
+      subtitle.textContent = 'Fiskal Berimbang & Aman';
+      chip.className = 'px-3 py-1 rounded-full font-label-md text-label-md font-semibold bg-surface-container-lowest text-[#2E7D5B] border border-[#2E7D5B]/30';
+      chip.textContent = 'Daya tahan >5 tahun';
+
+      balanceElem.className = 'font-display-hero text-[36px] leading-tight text-[#2E7D5B] font-semibold tracking-tight';
+      balanceBullet.className = 'w-1.5 h-1.5 rounded-full bg-[#2E7D5B]';
+      balanceNote.textContent = 'Surplus fiskal dapat dipupuk';
+    } else if (balance > -6.0) {
+      // OCHRE (WARNING / DEFISIT TERKENDALI)
+      banner.className = 'w-full rounded-[10px] p-space-md border border-[#A8650F]/40 bg-[#F6E8CF] flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm relative overflow-hidden transition-colors';
+      stripe.className = 'absolute left-0 top-0 bottom-0 w-1.5 bg-[#A8650F]';
+      headline.className = 'font-headline-lg text-headline-lg text-[#A8650F] tracking-tight';
+      headline.textContent = 'Kesenjangan ' + 'Rp' + Math.abs(balance).toFixed(2).replace('.', ',') + ' T';
+      subtitle.className = 'font-label-sm text-label-sm text-[#A8650F] uppercase tracking-wider font-semibold';
+      subtitle.textContent = 'Peringatan Defisit Operasional';
+      chip.className = 'px-3 py-1 rounded-full font-label-md text-label-md font-semibold bg-surface-container-lowest text-[#A8650F] border border-[#A8650F]/30';
+      chip.textContent = 'Daya tahan ' + enduranceText;
+
+      balanceElem.className = 'font-display-hero text-[36px] leading-tight text-[#A8650F] font-semibold tracking-tight';
+      balanceBullet.className = 'w-1.5 h-1.5 rounded-full bg-[#A8650F]';
+      balanceNote.textContent = 'Defisit operasional berjalan';
+    } else {
+      // RED (CRITICAL ALERT)
+      banner.className = 'w-full rounded-[10px] p-space-md border border-[#A33A2C]/40 bg-[#F6DCD7] flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm relative overflow-hidden transition-colors';
+      stripe.className = 'absolute left-0 top-0 bottom-0 w-1.5 bg-[#A33A2C]';
+      headline.className = 'font-headline-lg text-headline-lg text-[#A33A2C] tracking-tight';
+      headline.textContent = 'Kesenjangan ' + 'Rp' + Math.abs(balance).toFixed(2).replace('.', ',') + ' T';
+      subtitle.className = 'font-label-sm text-label-sm text-[#A33A2C] uppercase tracking-wider font-semibold';
+      subtitle.textContent = 'Tinjauan Tarif Wajib Dilakukan';
+      chip.className = 'px-3 py-1 rounded-full font-label-md text-label-md font-semibold bg-surface-container-lowest text-[#A33A2C] border border-[#A33A2C]/30';
+      chip.textContent = 'Daya tahan ' + enduranceText;
+
+      balanceElem.className = 'font-display-hero text-[36px] leading-tight text-[#A33A2C] font-semibold tracking-tight';
+      balanceBullet.className = 'w-1.5 h-1.5 rounded-full bg-[#A33A2C]';
+      balanceNote.textContent = 'Bantalan kas segera tergerus';
+    }
+
+    // Update Chart Heights and Values
+    document.getElementById('chart-rev-label').textContent = 'Rp' + rev.toFixed(2).replace('.', ',') + ' T';
+    document.getElementById('chart-spend-label').textContent = 'Rp' + totalSpending.toFixed(2).replace('.', ',') + ' T';
+
+    // Scale calculation (Max scale 60 T = 150px)
+    const maxScale = 58;
+    const revHeightPx = Math.min(150, Math.max(30, (rev / maxScale) * 150));
+    const totalSpendHeightPx = Math.min(155, Math.max(30, (totalSpending / maxScale) * 150));
+    const b50HeightPx = (b50Calc / totalSpending) * totalSpendHeightPx;
+    const psrHeightPx = totalSpendHeightPx - b50HeightPx;
+
+    document.getElementById('bar-rev').style.height = revHeightPx + 'px';
+    document.getElementById('bar-spend-total').style.height = totalSpendHeightPx + 'px';
+    document.getElementById('sub-bar-b50').style.height = b50HeightPx + 'px';
+    document.getElementById('sub-bar-psr').style.height = psrHeightPx + 'px';
+
+    // Dashed line position aligned to Revenue height
+    document.getElementById('chart-ref-line').style.bottom = revHeightPx + 'px';
+
+    // Gap indicator label
+    const gapElem = document.getElementById('chart-gap-indicator');
+    const gapLabel = document.getElementById('chart-gap-label');
+    gapLabel.textContent = (balance >= 0 ? '+' : '-') + 'Rp' + Math.abs(balance).toFixed(2).replace('.', ',') + ' T';
+    if (balance >= 0) {
+      gapElem.className = 'flex flex-col items-center justify-center z-20 px-2 py-1 bg-[#DCEFE5] border border-[#2E7D5B]/40 rounded text-center transition-all duration-300';
+      gapLabel.className = 'font-headline-md text-[15px] font-bold text-[#2E7D5B] leading-none';
+    } else if (balance > -6.0) {
+      gapElem.className = 'flex flex-col items-center justify-center z-20 px-2 py-1 bg-[#F6E8CF] border border-[#A8650F]/40 rounded text-center transition-all duration-300';
+      gapLabel.className = 'font-headline-md text-[15px] font-bold text-[#A8650F] leading-none';
+    } else {
+      gapElem.className = 'flex flex-col items-center justify-center z-20 px-2 py-1 bg-[#F6DCD7] border border-[#A33A2C]/40 rounded text-center transition-all duration-300';
+      gapLabel.className = 'font-headline-md text-[15px] font-bold text-[#A33A2C] leading-none';
+    }
+  }
+
+  // Initial calculation trigger
+  recalculate();
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant py-space-md"><div class="max-w-[1200px] mx-auto px-margin text-center"><p class="font-body-sm text-body-sm text-outline">Prototipe ilustratif PFPBC 2026. Bukan sistem resmi BPDP.</p></div></footer></body></html>

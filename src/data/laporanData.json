@@ -1,0 +1,78 @@
+{
+  "2026": {
+    "metrics": {
+      "kesenjanganNeracaT": 0,
+      "medianVerifikasiBln": 9,
+      "keputusanBerdasarUkdPct": 80
+    },
+    "carryLimitT": 5.0,
+    "proyeksiVsRealisasi": [
+      { "kuartal": "Q1", "proyeksi": 10.2, "realisasi": 9.8 },
+      { "kuartal": "Q2", "proyeksi": 20.5, "realisasi": 19.9 },
+      { "kuartal": "Q3", "proyeksi": 31.0, "realisasi": 31.4 },
+      { "kuartal": "Q4", "proyeksi": 41.2, "realisasi": 40.8 }
+    ],
+    "carryOver": [
+      { "kuartal": "Q1", "saldo": 3.2 },
+      { "kuartal": "Q2", "saldo": 4.5 },
+      { "kuartal": "Q3", "saldo": 2.1 },
+      { "kuartal": "Q4", "saldo": 3.8 }
+    ],
+    "keputusan": [
+      { "kebijakan": "Penyesuaian Tarif Ekspor", "ukd": "Ya (K1)", "penutup": "Komite Tarif", "status": "Terbit" },
+      { "kebijakan": "Cadangan Penyangga 2026", "ukd": "Ya (K2)", "penutup": "PMK Kas BLU", "status": "Terbit" },
+      { "kebijakan": "Kuota PSR Sawit 2026", "ukd": "Ya (D)", "penutup": "Kepmentan", "status": "Terbit" },
+      { "kebijakan": "Eskalasi B50 Juli 2026", "ukd": "Parsial", "penutup": "Komite Pengarah", "status": "Tinjauan" }
+    ]
+  },
+  "2027": {
+    "metrics": {
+      "kesenjanganNeracaT": 0,
+      "medianVerifikasiBln": 6,
+      "keputusanBerdasarUkdPct": 90
+    },
+    "carryLimitT": 5.0,
+    "proyeksiVsRealisasi": [
+      { "kuartal": "Q1", "proyeksi": 11.4, "realisasi": 11.6 },
+      { "kuartal": "Q2", "proyeksi": 22.8, "realisasi": 23.1 },
+      { "kuartal": "Q3", "proyeksi": 34.5, "realisasi": 34.2 },
+      { "kuartal": "Q4", "proyeksi": 45.0, "realisasi": 45.4 }
+    ],
+    "carryOver": [
+      { "kuartal": "Q1", "saldo": 3.8 },
+      { "kuartal": "Q2", "saldo": 4.8 },
+      { "kuartal": "Q3", "saldo": 4.2 },
+      { "kuartal": "Q4", "saldo": 4.7 }
+    ],
+    "keputusan": [
+      { "kebijakan": "Aktivasi β = 50% Penyangga", "ukd": "Ya (K1)", "penutup": "Komite Pengarah", "status": "Terbit" },
+      { "kebijakan": "Pilot Escrow 3 Kabupaten", "ukd": "Ya (D)", "penutup": "BPDP", "status": "Berjalan" },
+      { "kebijakan": "Penyelarasan Kuota B50", "ukd": "Ya (K2)", "penutup": "ESDM", "status": "Terbit" }
+    ]
+  },
+  "2028": {
+    "metrics": {
+      "kesenjanganNeracaT": 2.4,
+      "medianVerifikasiBln": 5,
+      "keputusanBerdasarUkdPct": 95
+    },
+    "carryLimitT": 5.0,
+    "proyeksiVsRealisasi": [
+      { "kuartal": "Q1", "proyeksi": 9.8, "realisasi": 8.9 },
+      { "kuartal": "Q2", "proyeksi": 19.6, "realisasi": 18.1 },
+      { "kuartal": "Q3", "proyeksi": 29.4, "realisasi": 27.5 },
+      { "kuartal": "Q4", "proyeksi": 39.2, "realisasi": 36.8 }
+    ],
+    "carryOver": [
+      { "kuartal": "Q1", "saldo": 4.7 },
+      { "kuartal": "Q2", "saldo": 5.2 },
+      { "kuartal": "Q3", "saldo": 3.4 },
+      { "kuartal": "Q4", "saldo": 2.3 }
+    ],
+    "keputusan": [
+      { "kebijakan": "Penarikan Penyangga Kuartal III", "ukd": "Ya (K3)", "penutup": "PMK Kas BLU", "status": "Terbit" },
+      { "kebijakan": "Evaluasi Pilot Peremajaan", "ukd": "Ya (D)", "penutup": "Evaluator", "status": "Selesai" },
+      { "kebijakan": "Revisi Tarif Pungutan", "ukd": "Ya (K4)", "penutup": "Menkeu", "status": "Terbit" }
+    ]
+  }
+}

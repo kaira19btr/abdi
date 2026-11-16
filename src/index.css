@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Newsreader", Georgia, serif;
+  --font-sans: "Public Sans", system-ui, -apple-system, sans-serif;
+
+  --color-surface: var(--bg);
+  --color-surface-low: var(--surface-alt);
+  --color-surface-card: var(--surface);
+  --color-surface-container: var(--surface-container);
+  --color-surface-high: var(--surface-high);
+  --color-surface-highest: var(--surface-highest);
+
+  --color-ink: var(--text-main);
+  --color-ink-muted: var(--text-muted);
+  --color-ink-subtle: var(--text-subtle);
+
+  --color-primary: var(--text-primary);
+  --color-primary-container: var(--btn-primary-bg);
+  --color-primary-fixed: var(--ok-tint);
+  --color-on-primary: var(--btn-primary-fg);
+
+  --color-secondary: var(--ok-tint-fg);
+  --color-secondary-container: var(--ok-tint);
+  --color-on-secondary-container: var(--ok-tint-fg);
+
+  --color-tertiary: var(--warn-tint-fg);
+  --color-tertiary-container: var(--warn);
+  --color-tertiary-fixed: var(--warn-tint);
+  --color-on-tertiary-container: var(--warn-tint-fg);
+
+  --color-border: var(--border-col);
+  --color-border-strong: var(--border-strong-col);
+
+  --color-status-ok-bg: var(--ok-tint);
+  --color-status-ok-fg: var(--ok-tint-fg);
+  --color-status-ok-border: var(--ok-border);
+
+  --color-status-warn-bg: var(--warn-tint);
+  --color-status-warn-fg: var(--warn-tint-fg);
+  --color-status-warn-border: var(--warn-border);
+
+  --color-status-bad-bg: var(--bad-tint);
+  --color-status-bad-fg: var(--bad-tint-fg);
+  --color-status-bad-border: var(--bad-border);
+}
+
+:root {
+  color-scheme: light dark;
+
+  /* Requested Core Palette Tokens */
+  --ink: #003049;
+  --bg: #FDF0D5;
+  --surface: #FFFBF2;
+  --steel: #669BBC;
+  --bad: #C1121F;
+  --bad-deep: #780000;
+  --warn: #E0A030;
+  --ok: #2F6F96;
+
+  /* Structural Surface & Border Tokens */
+  --surface-alt: #F8ECCF;
+  --surface-container: #F2E2BF;
+  --surface-high: #EAD6AC;
+  --surface-highest: #E3D3AE;
+  --border-col: #E3D3AE;
+  --border-strong-col: #A59167;
+
+  /* Foreground Text Tokens (verified >= 4.5:1 WCAG AA) */
+  --text-main: #003049;
+  --text-muted: #284B5C;
+  --text-subtle: #3D5B6B;
+  --text-primary: #003049;
+
+  /* Sidebar & Hero Bands */
+  --sidebar-bg: #003049;
+  --sidebar-text: #FDF0D5;
+  --sidebar-muted: #C4D9E6;
+  --sidebar-border: #174B68;
+  --hero-bg: #003049;
+  --hero-text: #FDF0D5;
+  --hero-muted: #D5E5EE;
+  --panel-top-accent: #003049;
+
+  /* Primary Buttons (--ink in light, high-contrast --steel in dark) */
+  --btn-primary-bg: #003049;
+  --btn-primary-hover: #134866;
+  --btn-primary-fg: #FDF0D5;
+
+  /* Status Banner Tints & Accessible Foregrounds */
+  --ok-tint: #DCEAF3;
+  --ok-tint-fg: #1A4B69;
+  --ok-border: #2F6F96;
+
+  --warn-tint: #FBEBC8;
+  --warn-tint-fg: #5E3C02;
+  --warn-border: #9E680A;
+
+  --bad-tint: #F7D9DB;
+  --bad-tint-fg: #780000;
+  --bad-border: #C1121F;
+  --bad-solid: #C1121F;
+  --bad-text: #C1121F;
+
+  /* Tooltip Surface */
+  --tooltip-bg: #003049;
+  --tooltip-fg: #FDF0D5;
+
+  /* Chart Series Tokens */
+  --chart-rev: #003049;
+  --chart-b50: #669BBC;
+  --chart-psr: #E0A030;
+  --chart-other: #8A8F98;
+  --chart-gap: #C1121F;
+  --chart-line-real: #003049;
+  --chart-line-proj: #669BBC;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #001C2B;
+    --surface: #06293A;
+    --bad: #E5484D;
+    --bad-deep: #FF9A9D;
+
+    --surface-alt: #0A3347;
+    --surface-container: #0F3E55;
+    --surface-high: #144963;
+    --surface-highest: #1B5470;
+    --border-col: #1E4D63;
+    --border-strong-col: #4C7B91;
+
+    --text-main: #FDF0D5;
+    --text-muted: #CEDCE3;
+    --text-subtle: #9FB9C7;
+    --text-primary: #669BBC;
+
+    --sidebar-bg: #001420;
+    --sidebar-text: #FDF0D5;
+    --sidebar-muted: #B6CEDB;
+    --sidebar-border: #174257;
+    --hero-bg: #001420;
+    --hero-text: #FDF0D5;
+    --hero-muted: #CEDCE3;
+    --panel-top-accent: #669BBC;
+
+    --btn-primary-bg: #669BBC;
+    --btn-primary-hover: #7EB1D0;
+    --btn-primary-fg: #003049;
+
+    --ok-tint: #0E3B54;
+    --ok-tint-fg: #DCEAF3;
+    --ok-border: #669BBC;
+
+    --warn-tint: #3D2B08;
+    --warn-tint-fg: #FBEBC8;
+    --warn-border: #E0A030;
+
+    --bad-tint: #3D1116;
+    --bad-tint-fg: #FFD6D8;
+    --bad-border: #E5484D;
+    --bad-solid: #C1121F;
+    --bad-text: #FF9A9D;
+
+    --tooltip-bg: #001420;
+    --tooltip-fg: #FDF0D5;
+
+    --chart-rev: #FDF0D5;
+    --chart-b50: #669BBC;
+    --chart-psr: #E0A030;
+    --chart-other: #9EA4AD;
+    --chart-gap: #E5484D;
+    --chart-line-real: #FDF0D5;
+    --chart-line-proj: #669BBC;
+  }
+}
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    overscroll-behavior: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-headline {
+    font-family: var(--font-serif);
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}

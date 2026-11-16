@@ -1,0 +1,6 @@
+{
+  "name": "ABDI — Dana Perkebunan",
+  "description": "Prototipe kebijakan fiskal PFPBC 2026 untuk menguji kecukupan Dana Perkebunan sebelum mandat B50.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
