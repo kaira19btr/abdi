@@ -22,6 +22,7 @@ import { Term } from '../components/ui/Term';
 import {
   PRESETS,
   REGIME_INPUTS,
+  type VerdictLevel,
   type YearRegime,
   calcUkd,
   formatNumberId,
@@ -38,21 +39,38 @@ const REGIME_STYLES: Record<YearRegime, string> = {
 export function PenyanggaPage() {
   const { params, setParam, bufferYears, bufferProjection, cycleBufferYear } = useAbdi();
 
+  const k3Stress = calcUkd({
+    ...params,
+    brent: PRESETS.K3.brent,
+    penerimaan: PRESETS.K3.penerimaan,
+  });
+  const k3StressDeficit = k3Stress.gap > 0 ? k3Stress.gap : 3.71;
+  const threshold2Yr = 2 * k3StressDeficit;
+
   const chartData = bufferProjection.rows.map((r) => ({
     year: String(r.year),
     endBalance: Number(r.endBalance.toFixed(2)),
     delta: Number(r.delta.toFixed(2)),
     regime: r.regime,
-    labelTop: `Rp${formatNumberId(r.endBalance, 1)}T`,
-    deltaLabel: formatTriliun(r.delta, 1, true),
+    labelTop: `Rp${formatNumberId(r.endBalance, 2)}T`,
+    deltaLabel: formatTriliun(r.delta, 2, true),
   }));
 
-  const maxChartY = Math.max(25, Math.ceil(Math.max(...chartData.map((d) => d.endBalance)) / 5) * 5);
-
-  const totalSavedGoodYears = bufferProjection.rows.reduce(
-    (sum, r) => sum + (r.delta > 0 ? r.delta : 0),
-    0
+  const maxChartY = Math.max(
+    30,
+    Math.ceil(Math.max(...chartData.map((d) => d.endBalance), threshold2Yr) / 5) * 5
   );
+
+  const surplusRows = bufferProjection.rows.filter((r) => r.delta > 0);
+  const totalSavedGoodYears = surplusRows.reduce((sum, r) => sum + r.delta, 0);
+  const surplusYearsList = surplusRows.map((r) => r.year).join(', ');
+
+  const minRow = bufferProjection.rows.reduce(
+    (min, r) => (r.endBalance < min.endBalance ? r : min),
+    bufferProjection.rows[0]
+  );
+  const minDayaTahan = k3StressDeficit > 0 ? minRow.endBalance / k3StressDeficit : 0;
+  const hasDipBelow2Yr = minRow.endBalance < threshold2Yr - 0.005;
 
   const sensitivityRows = [
     {
@@ -78,12 +96,19 @@ export function PenyanggaPage() {
     },
   ];
 
-  const enduranceLevel =
-    bufferProjection.dayaTahanTahun >= 2
-      ? 'ok'
-      : bufferProjection.dayaTahanTahun >= 1
+  const enduranceLevel: VerdictLevel =
+    minRow.endBalance <= 0.004 || bufferProjection.endBalance < k3StressDeficit
+      ? 'bad'
+      : hasDipBelow2Yr || bufferProjection.dayaTahanTahun < 2
       ? 'warn'
-      : 'bad';
+      : 'ok';
+
+  const statusChipSuffix = hasDipBelow2Yr
+    ? `Terendah ${minRow.year}: ${formatNumberId(minDayaTahan, 1)} thn · 2031: ${formatNumberId(
+        bufferProjection.dayaTahanTahun,
+        1
+      )} thn`
+    : `Akhir 2031: ${formatNumberId(bufferProjection.dayaTahanTahun, 1)} thn`;
 
   return (
     <div className="max-w-[1200px] mx-auto px-4 sm:px-8 py-6 flex flex-col gap-6">
@@ -215,7 +240,7 @@ export function PenyanggaPage() {
                           deltaVal < 0 ? 'text-[var(--bad-text)]' : 'text-[var(--ok-tint-fg)]'
                         }`}
                       >
-                        ({formatTriliun(deltaVal, 1, true)})
+                        ({formatTriliun(deltaVal, 2, true)})
                       </span>
                     </div>
                     <button
@@ -248,7 +273,7 @@ export function PenyanggaPage() {
             <div className="inline-flex items-center gap-1.5 self-start sm:self-auto shrink-0">
               <StatusChip
                 level={enduranceLevel}
-                suffix={`Daya tahan ${formatNumberId(bufferProjection.dayaTahanTahun, 1)} tahun`}
+                suffix={statusChipSuffix}
                 variant="tint"
               />
               <Info text={PENYANGGA_COPY.chartInfo} />
@@ -301,12 +326,12 @@ export function PenyanggaPage() {
                   }}
                 />
                 <ReferenceLine
-                  y={5.5}
+                  y={threshold2Yr}
                   stroke="var(--chart-gap)"
                   strokeWidth={2}
                   strokeDasharray="5 4"
                   label={{
-                    value: 'Batas kritis Rp5,5 T',
+                    value: `Ambang 2 thn (${formatTriliun(threshold2Yr, 2)})`,
                     position: 'insideTopRight',
                     fill: 'var(--bad-text)',
                     fontSize: 11,
@@ -318,7 +343,7 @@ export function PenyanggaPage() {
                     <Cell
                       key={idx}
                       fill={
-                        entry.endBalance <= 5.5
+                        entry.endBalance < threshold2Yr - 0.005
                           ? 'url(#pattern-critical)'
                           : entry.delta >= 0
                           ? 'var(--chart-rev)'
@@ -350,10 +375,29 @@ export function PenyanggaPage() {
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <span className="w-3 h-2.5 rounded-xs bg-[var(--chart-gap)]" />
-                Di bawah batas Rp5,5 T
+                Di bawah ambang 2 thn ({formatTriliun(threshold2Yr, 2)})
               </span>
             </div>
             <span className="text-ink-subtle tabular-nums">{PENYANGGA_COPY.chartUnit}</span>
+          </div>
+
+          <div className="bg-surface-low border border-border rounded-lg px-3 py-2 text-xs text-ink-muted flex flex-wrap items-center justify-between gap-2 tabular-nums">
+            <span>
+              Saldo awal: <strong className="text-ink">{formatTriliun(params.saldoAwal, 2)}</strong> (
+              {formatNumberId(params.saldoAwal / k3StressDeficit, 1)} thn)
+            </span>
+            <span>
+              Terendah {minRow.year}:{' '}
+              <strong className={hasDipBelow2Yr ? 'text-[var(--bad-text)]' : 'text-ink'}>
+                {formatTriliun(minRow.endBalance, 2)}
+              </strong>{' '}
+              ({formatNumberId(minDayaTahan, 1)} thn)
+            </span>
+            <span>
+              Akhir 2031:{' '}
+              <strong className="text-ink">{formatTriliun(bufferProjection.endBalance, 2)}</strong> (
+              {formatNumberId(bufferProjection.dayaTahanTahun, 1)} thn beban K3)
+            </span>
           </div>
         </div>
       </div>
@@ -433,8 +477,12 @@ export function PenyanggaPage() {
       {/* c) Dynamic Conclusion */}
       <Conclusion>
         Dengan β {formatNumberId(params.beta, 0)}%, <Term term="Penyangga">bantalan</Term>{' '}
-        menyisihkan Rp {formatNumberId(totalSavedGoodYears, 2)} T pada tahun baik dan bertahan{' '}
-        {formatNumberId(bufferProjection.dayaTahanTahun, 1)} tahun pada kondisi tertekan.
+        menghimpun total {formatTriliun(totalSavedGoodYears, 2)} dari {surplusRows.length} tahun
+        surplus{surplusYearsList ? ` (${surplusYearsList})` : ''}, sempat turun ke{' '}
+        {formatTriliun(minRow.endBalance, 2)} pada {minRow.year} (
+        {formatNumberId(minDayaTahan, 1)} thn), dan berakhir di{' '}
+        {formatTriliun(bufferProjection.endBalance, 2)} pada 2031 (
+        {formatNumberId(bufferProjection.dayaTahanTahun, 1)} thn beban K3).
       </Conclusion>
 
       {/* d) Bridge */}

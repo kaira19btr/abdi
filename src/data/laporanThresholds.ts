@@ -10,7 +10,7 @@ export interface ThresholdRule {
 export const LAPORAN_THRESHOLDS = {
   kesenjanganNeracaT: {
     okMax: 0,
-    warnMax: 3.5,
+    warnMax: 4.0,
   } satisfies ThresholdRule,
   medianVerifikasiBln: {
     okMax: 6,

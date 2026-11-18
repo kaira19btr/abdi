@@ -68,8 +68,8 @@ export function LaporanPage() {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-8 flex flex-wrap items-center justify-between gap-2">
           <span className="text-xs font-semibold text-ink">Komponen I · Evaluasi Dampak</span>
           <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container text-ink text-xs font-medium">
-              <span>{LAPORAN_COPY.dataContohChip}</span>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[var(--warn-tint)] text-[var(--warn-tint-fg)] border border-[var(--warn-border)]/45 text-xs font-semibold">
+              <span>! {LAPORAN_COPY.dataContohChip}</span>
               <Info text={LAPORAN_COPY.dataContohInfo} />
             </span>
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-low text-ink-muted text-xs font-medium border border-border">
@@ -119,6 +119,18 @@ export function LaporanPage() {
           }
         />
 
+        {/* Illustrative Example Notice */}
+        <div
+          role="note"
+          className="px-4 py-2.5 rounded-lg bg-[var(--warn-tint)] border border-[var(--warn-border)]/45 border-l-4 [border-left-style:dashed] text-xs text-[var(--warn-tint-fg)] flex flex-wrap items-center justify-between gap-2"
+        >
+          <span>
+            <strong>Contoh ilustrasi:</strong> Seluruh angka kinerja tahun {selectedYear}, data
+            kuartalan, dan daftar keputusan di halaman ini merupakan simulasi format pelaporan
+            ABDI (bukan realisasi resmi BPDP).
+          </span>
+        </div>
+
         {/* b) 3 Traffic-Light Tiles: icon + word ("✓ Cukup", "! Waspada", "✕ Bahaya") + solid/dashed/double left border */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {/* Fiskal */}
@@ -128,7 +140,7 @@ export function LaporanPage() {
             <div className="flex items-center justify-between gap-2 mb-2">
               <div className="flex items-center gap-2 min-w-0">
                 <span className="text-sm font-semibold text-ink">Fiskal</span>
-                <Info text="Keseimbangan kas BLU terhadap beban insentif dan peremajaan." />
+                <Info text="Keseimbangan kas BLU terhadap beban insentif dan peremajaan. Untuk 2026 diselaraskan dengan kesenjangan skenario dasar K3 pasca-PSR (−Rp3,71 T)." />
               </div>
               <StatusChip level={fiskalStatus} variant="tint" />
             </div>
@@ -136,9 +148,13 @@ export function LaporanPage() {
               <div
                 className={`font-headline text-3xl font-semibold tabular-nums ${fiskalMeta.valueTextCls}`}
               >
-                {formatTriliun(metrics.kesenjanganNeracaT, 1)}
+                {formatTriliun(metrics.kesenjanganNeracaT, 2)}
               </div>
-              <div className="text-sm text-ink-muted mt-1">Kesenjangan neraca akhir</div>
+              <div className="text-sm text-ink-muted mt-1">
+                {selectedYear === '2026'
+                  ? 'Kesenjangan dasar K3 pasca-PSR (ilustrasi)'
+                  : 'Kesenjangan neraca akhir (ilustrasi)'}
+              </div>
             </div>
             <div className="mt-3 pt-2 border-t border-border flex items-center justify-between text-xs text-ink-subtle">
               <span>Target batas: Rp0 T</span>
@@ -484,26 +500,43 @@ export function LaporanPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-border/50">
-                {current.keputusan.map((row) => (
-                  <tr key={row.kebijakan} className="hover:bg-surface-low/50">
-                    <td className="py-2.5 pr-3 font-medium text-ink">{row.kebijakan}</td>
-                    <td className="py-2.5 pr-3">
-                      <span
-                        className={`inline-flex px-2 py-0.5 rounded font-semibold ${
-                          row.ukd.startsWith('Ya')
-                            ? 'bg-[var(--ok-tint)] text-[var(--ok-tint-fg)]'
-                            : 'bg-[var(--warn-tint)] text-[var(--warn-tint-fg)]'
+                {current.keputusan.map((row) => {
+                  const isActiveLaw = row.status === 'Berlaku';
+                  const isAttention =
+                    row.status === 'Diusulkan' ||
+                    row.status === 'Tinjauan' ||
+                    row.status === 'Rencana';
+                  return (
+                    <tr key={row.kebijakan} className="hover:bg-surface-low/50">
+                      <td className="py-2.5 pr-3 font-medium text-ink">{row.kebijakan}</td>
+                      <td className="py-2.5 pr-3">
+                        <span
+                          className={`inline-flex px-2 py-0.5 rounded font-semibold ${
+                            isActiveLaw
+                              ? 'bg-[var(--ok-tint)] text-[var(--ok-tint-fg)]'
+                              : isAttention
+                              ? 'bg-[var(--warn-tint)] text-[var(--warn-tint-fg)]'
+                              : 'bg-surface-container text-ink-muted'
+                          }`}
+                        >
+                          {row.ukd}
+                        </span>
+                      </td>
+                      <td className="py-2.5 pr-3 text-ink-muted">{row.penutup}</td>
+                      <td
+                        className={`py-2.5 text-right font-semibold ${
+                          isActiveLaw
+                            ? 'text-[var(--ok-tint-fg)]'
+                            : isAttention
+                            ? 'text-[var(--warn-tint-fg)]'
+                            : 'text-ink-muted'
                         }`}
                       >
-                        {row.ukd.startsWith('Ya') ? `✓ ${row.ukd}` : `! ${row.ukd}`}
-                      </span>
-                    </td>
-                    <td className="py-2.5 pr-3 text-ink-muted">{row.penutup}</td>
-                    <td className="py-2.5 text-right font-semibold text-[var(--ok-tint-fg)]">
-                      {row.status}
-                    </td>
-                  </tr>
-                ))}
+                        {row.status}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>

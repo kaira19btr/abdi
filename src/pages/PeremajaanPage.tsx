@@ -56,22 +56,16 @@ export function PeremajaanPage() {
 
   const barsData =
     commodity === 'sawit'
-      ? [
-          {
-            name: 'Realisasi saat ini',
-            value: 47,
-            pct: Math.round((47 / 180) * 100),
-            barLabel: '47 rb ha (26%)',
-          },
-          {
-            name: 'Target ABDI',
-            value: Number(peremajaanCounts.siapTanam.toFixed(1)),
-            pct: Math.round((peremajaanCounts.siapTanam / 180) * 100),
-            barLabel: `${formatNumberId(peremajaanCounts.siapTanam, 1)} rb ha (${Math.round(
-              (peremajaanCounts.siapTanam / 180) * 100
-            )}%)`,
-          },
-        ]
+      ? activeCom.bars.map((b, idx) => {
+          const val = idx === 2 ? Number(peremajaanCounts.siapTanam.toFixed(1)) : b.value;
+          const pct = Math.round((val / b.max) * 100);
+          return {
+            name: b.name,
+            value: val,
+            pct,
+            barLabel: `${formatNumberId(val, 1)} ${b.unit} (${pct}%)`,
+          };
+        })
       : activeCom.bars.map((b) => {
           const pct = Math.round((b.value / b.max) * 100);
           return {
@@ -329,12 +323,12 @@ export function PeremajaanPage() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 h-44">
+          <div className="lg:col-span-7 h-48">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
                 data={barsData}
                 layout="vertical"
-                margin={{ top: 8, right: 110, left: 16, bottom: 8 }}
+                margin={{ top: 8, right: 120, left: 12, bottom: 8 }}
               >
                 <defs>
                   <pattern
@@ -358,8 +352,8 @@ export function PeremajaanPage() {
                 <YAxis
                   type="category"
                   dataKey="name"
-                  width={120}
-                  tick={{ fill: 'var(--text-main)', fontSize: 12, fontWeight: 600 }}
+                  width={145}
+                  tick={{ fill: 'var(--text-main)', fontSize: 11.5, fontWeight: 600 }}
                 />
                 <Tooltip
                   formatter={(value, _n, item) => [
@@ -374,11 +368,11 @@ export function PeremajaanPage() {
                     fontSize: '12px',
                   }}
                 />
-                <Bar dataKey="pct" radius={[0, 6, 6, 0]} maxBarSize={26}>
+                <Bar dataKey="pct" radius={[0, 6, 6, 0]} maxBarSize={24}>
                   {barsData.map((_, i) => (
                     <Cell
                       key={i}
-                      fill={i === 0 ? 'var(--chart-rev)' : 'url(#pattern-psr-target)'}
+                      fill={i < barsData.length - 1 ? 'var(--chart-rev)' : 'url(#pattern-psr-target)'}
                     />
                   ))}
                   <LabelList
@@ -402,23 +396,26 @@ export function PeremajaanPage() {
         icon={<FlaskConical className="w-4 h-4" aria-hidden="true" />}
         defaultOpen={false}
       >
+        <div className="mb-3 px-3 py-2 rounded-lg bg-[var(--warn-tint)] border border-[var(--warn-border)]/45 border-l-4 [border-left-style:dashed] text-xs text-[var(--warn-tint-fg)]">
+          <strong>Catatan:</strong> {PEREMAJAAN_COPY.pilotNote}
+        </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead>
               <tr className="border-b border-border text-ink-muted uppercase font-semibold">
                 <th className="py-2.5 px-3">Indikator</th>
-                <th className="py-2.5 px-3 text-ink">Pilot ABDI</th>
-                <th className="py-2.5 px-3">Pembanding</th>
-                <th className="py-2.5 px-3 text-right">Selisih</th>
+                <th className="py-2.5 px-3 text-ink">Target hipotetis (pilot)</th>
+                <th className="py-2.5 px-3">Pembanding awal</th>
+                <th className="py-2.5 px-3 text-right">Selisih indikatif</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border/50">
               {PEREMAJAAN_COPY.pilotRows.map((row) => (
                 <tr key={row.indikator} className="hover:bg-surface-low/60">
                   <td className="py-3 px-3 font-semibold text-ink">{row.indikator}</td>
-                  <td className="py-3 px-3 font-bold text-[var(--ok-tint-fg)] tabular-nums">{row.pilot}</td>
+                  <td className="py-3 px-3 font-bold text-ink tabular-nums">{row.pilot}</td>
                   <td className="py-3 px-3 text-ink-muted tabular-nums">{row.pembanding}</td>
-                  <td className="py-3 px-3 text-right font-semibold text-[var(--ok-tint-fg)] tabular-nums">
+                  <td className="py-3 px-3 text-right font-semibold text-ink-muted tabular-nums">
                     {row.selisih}
                   </td>
                 </tr>

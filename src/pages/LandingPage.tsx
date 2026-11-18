@@ -25,8 +25,8 @@ export function LandingPage() {
 
   const statusSuffix =
     ukd.verdict === 'ok'
-      ? `Surplus ${formatTriliun(ukd.net, 2)}`
-      : `Defisit ${formatTriliun(ukd.gap, 2)}`;
+      ? `Pasca-PSR: +${formatTriliun(ukd.net, 2)}`
+      : `Pasca-PSR: −${formatTriliun(ukd.gap, 2)}`;
 
   return (
     <div className="min-h-screen flex flex-col bg-surface text-ink">

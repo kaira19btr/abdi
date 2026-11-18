@@ -30,16 +30,18 @@ export function BerandaPage() {
   }, []);
 
   const demoRes = calcUkd({ ...DEFAULT_PARAMS, brent: demoBrent });
-  const maxBar = Math.max(DEFAULT_PARAMS.penerimaan, demoRes.need, 45);
+  const b50OnlyNet = DEFAULT_PARAMS.penerimaan - demoRes.need;
+  const maxBar = Math.max(DEFAULT_PARAMS.penerimaan, demoRes.belanja, 48);
   const revPct = mounted ? Math.min(100, (DEFAULT_PARAMS.penerimaan / maxBar) * 100) : 0;
   const needPct = mounted ? Math.min(100, (demoRes.need / maxBar) * 100) : 0;
+  const totalPct = mounted ? Math.min(100, (demoRes.belanja / maxBar) * 100) : 0;
 
   const chipSuffix =
     demoRes.verdict === 'ok'
-      ? `Sisa ${formatTriliun(demoRes.net, 2)}`
+      ? `Pasca-PSR: +${formatTriliun(demoRes.net, 2)}`
       : demoRes.verdict === 'warn'
-      ? `Kurang ${formatTriliun(demoRes.gap, 2)} · Tahan ${formatNumberId(demoRes.dayaTahan ?? 0, 1)} thn`
-      : `Kurang ${formatTriliun(demoRes.gap, 2)} · Tinjau tarif`;
+      ? `Pasca-PSR: −${formatTriliun(demoRes.gap, 2)} · Tahan ${formatNumberId(demoRes.dayaTahan ?? 0, 1)} thn`
+      : `Pasca-PSR: −${formatTriliun(demoRes.gap, 2)} · Tinjau tarif`;
 
   const scrollToProblem = () => {
     const el = document.getElementById('masalah-section');
@@ -87,7 +89,7 @@ export function BerandaPage() {
           </div>
 
           {/* b) Live Mini-Demo */}
-          <div className="lg:col-span-5 bg-surface-card text-ink rounded-xl p-5 border border-border border-t-4 border-t-[var(--steel)] flex flex-col gap-4">
+          <div className="lg:col-span-5 bg-surface-card text-ink rounded-xl p-5 border border-border border-t-4 border-t-[var(--steel)] flex flex-col gap-3.5">
             <div className="flex items-center justify-between gap-2">
               <h2 className="font-headline text-lg font-semibold text-ink">
                 {BERANDA_COPY.miniDemo.title}
@@ -118,7 +120,7 @@ export function BerandaPage() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2.5">
               <div className="flex flex-col gap-1">
                 <div className="flex items-center justify-between text-xs">
                   <span className="text-ink font-medium">{BERANDA_COPY.miniDemo.revLabel}</span>
@@ -126,7 +128,7 @@ export function BerandaPage() {
                     {BERANDA_COPY.miniDemo.revValue}
                   </span>
                 </div>
-                <div className="h-3.5 w-full bg-surface-container rounded-full overflow-hidden">
+                <div className="h-3 w-full bg-surface-container rounded-full overflow-hidden">
                   <div
                     className="h-full bg-[var(--chart-rev)] rounded-full transition-[width] duration-300 motion-reduce:transition-none"
                     style={{ width: `${revPct}%` }}
@@ -136,22 +138,63 @@ export function BerandaPage() {
 
               <div className="flex flex-col gap-1">
                 <div className="flex items-center justify-between text-xs">
-                  <span className="text-ink font-medium">{BERANDA_COPY.miniDemo.needLabel}</span>
+                  <span className="text-ink font-medium">Kebutuhan B50 saja</span>
                   <span className="font-semibold text-ink tabular-nums">
                     {formatTriliun(demoRes.need, 2)}
                   </span>
                 </div>
-                <div className="h-3.5 w-full bg-surface-container rounded-full overflow-hidden">
+                <div className="h-3 w-full bg-surface-container rounded-full overflow-hidden">
                   <div
                     className="h-full bg-[var(--chart-b50)] rounded-full transition-[width] duration-300 motion-reduce:transition-none"
                     style={{ width: `${needPct}%` }}
                   />
                 </div>
               </div>
+
+              <div className="flex flex-col gap-1">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="text-ink font-medium">
+                    Total (+ Peremajaan {formatTriliun(DEFAULT_PARAMS.peremajaan, 2)})
+                  </span>
+                  <span className="font-semibold text-ink tabular-nums">
+                    {formatTriliun(demoRes.belanja, 2)}
+                  </span>
+                </div>
+                <div className="h-3 w-full bg-surface-container rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-[var(--chart-psr)] rounded-full transition-[width] duration-300 motion-reduce:transition-none"
+                    style={{ width: `${totalPct}%` }}
+                  />
+                </div>
+              </div>
             </div>
 
-            <div className="pt-2 border-t border-border flex flex-wrap items-center justify-between gap-2">
-              <StatusChip level={demoRes.verdict} suffix={chipSuffix} variant="tint" />
+            <div className="pt-2 border-t border-border flex flex-col gap-2">
+              <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-semibold tabular-nums">
+                <span className="text-ink-muted">
+                  B50 saja:{' '}
+                  <span
+                    className={
+                      b50OnlyNet >= 0 ? 'text-[var(--ok-tint-fg)]' : 'text-[var(--bad-text)]'
+                    }
+                  >
+                    {formatTriliun(b50OnlyNet, 2, true)}
+                  </span>
+                </span>
+                <span className="text-ink-muted">
+                  Setelah peremajaan:{' '}
+                  <span
+                    className={
+                      demoRes.net >= 0 ? 'text-[var(--ok-tint-fg)]' : 'text-[var(--bad-text)]'
+                    }
+                  >
+                    {formatTriliun(demoRes.net, 2, true)}
+                  </span>
+                </span>
+              </div>
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <StatusChip level={demoRes.verdict} suffix={chipSuffix} variant="tint" />
+              </div>
             </div>
             <p className="text-xs text-ink-muted">{BERANDA_COPY.miniDemo.caption}</p>
           </div>

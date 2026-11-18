@@ -1,7 +1,7 @@
 {
   "2026": {
     "metrics": {
-      "kesenjanganNeracaT": 0,
+      "kesenjanganNeracaT": 3.71,
       "medianVerifikasiBln": 9,
       "keputusanBerdasarUkdPct": 80
     },
@@ -19,10 +19,10 @@
       { "kuartal": "Q4", "saldo": 3.8 }
     ],
     "keputusan": [
-      { "kebijakan": "Penyesuaian Tarif Ekspor", "ukd": "Ya (K1)", "penutup": "Komite Tarif", "status": "Terbit" },
-      { "kebijakan": "Cadangan Penyangga 2026", "ukd": "Ya (K2)", "penutup": "PMK Kas BLU", "status": "Terbit" },
-      { "kebijakan": "Kuota PSR Sawit 2026", "ukd": "Ya (D)", "penutup": "Kepmentan", "status": "Terbit" },
-      { "kebijakan": "Eskalasi B50 Juli 2026", "ukd": "Parsial", "penutup": "Komite Pengarah", "status": "Tinjauan" }
+      { "kebijakan": "Tarif Pungutan Ekspor CPO 12,5% (PMK 9/2026)", "ukd": "Dasar", "penutup": "Kemenkeu", "status": "Berlaku" },
+      { "kebijakan": "Usulan Aturan Penyangga", "ukd": "Usulan (K2)", "penutup": "PMK Baru Kas BLU", "status": "Diusulkan" },
+      { "kebijakan": "Kuota PSR Sawit (contoh ilustrasi)", "ukd": "Contoh (D)", "penutup": "Komite Pengarah", "status": "Ilustrasi" },
+      { "kebijakan": "Eskalasi B50 Juli 2026 (uji K3)", "ukd": "Kesenjangan −Rp3,71 T", "penutup": "Komite Pengarah", "status": "Tinjauan" }
     ]
   },
   "2027": {
@@ -45,9 +45,9 @@
       { "kuartal": "Q4", "saldo": 4.7 }
     ],
     "keputusan": [
-      { "kebijakan": "Aktivasi β = 50% Penyangga", "ukd": "Ya (K1)", "penutup": "Komite Pengarah", "status": "Terbit" },
-      { "kebijakan": "Pilot Escrow 3 Kabupaten", "ukd": "Ya (D)", "penutup": "BPDP", "status": "Berjalan" },
-      { "kebijakan": "Penyelarasan Kuota B50", "ukd": "Ya (K2)", "penutup": "ESDM", "status": "Terbit" }
+      { "kebijakan": "Aktivasi β = 50% Penyangga", "ukd": "Ilustrasi (K1)", "penutup": "Komite Pengarah", "status": "Rencana" },
+      { "kebijakan": "Pilot 2–3 Kabupaten (pasca-baseline)", "ukd": "Ilustrasi (D)", "penutup": "BPDP", "status": "Rencana" },
+      { "kebijakan": "Penyelarasan Kuota B50", "ukd": "Ilustrasi (K2)", "penutup": "ESDM & Komite Pengarah", "status": "Ilustrasi" }
     ]
   },
   "2028": {
@@ -70,9 +70,9 @@
       { "kuartal": "Q4", "saldo": 2.3 }
     ],
     "keputusan": [
-      { "kebijakan": "Penarikan Penyangga Kuartal III", "ukd": "Ya (K3)", "penutup": "PMK Kas BLU", "status": "Terbit" },
-      { "kebijakan": "Evaluasi Pilot Peremajaan", "ukd": "Ya (D)", "penutup": "Evaluator", "status": "Selesai" },
-      { "kebijakan": "Revisi Tarif Pungutan", "ukd": "Ya (K4)", "penutup": "Menkeu", "status": "Terbit" }
+      { "kebijakan": "Penarikan Penyangga Kuartal III", "ukd": "Ilustrasi (K3)", "penutup": "PMK Baru Kas BLU", "status": "Ilustrasi" },
+      { "kebijakan": "Evaluasi Proses Pilot Peremajaan", "ukd": "Ilustrasi (D)", "penutup": "Evaluator", "status": "Rencana" },
+      { "kebijakan": "Revisi Tarif Pungutan", "ukd": "Ilustrasi (K4)", "penutup": "Menkeu & Komite Pengarah", "status": "Ilustrasi" }
     ]
   }
 }

@@ -104,9 +104,11 @@ export function calcUkd(params: UkdParams): UkdResult {
   const net = params.penerimaan - belanja;
   const gap = Math.max(0, -net);
 
+  const rawExcess = Math.round((params.penerimaan - params.rataRata) * 1e6) / 1e6;
+  const rawBetaPart = Math.round(((params.beta / 100) * rawExcess) * 1e6) / 1e6;
   const R =
     net > 0
-      ? Math.max(0, Math.min((params.beta / 100) * (params.penerimaan - params.rataRata), net))
+      ? Math.max(0, Math.min(rawBetaPart, net))
       : 0;
 
   const dayaTahan =
